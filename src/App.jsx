@@ -1,19 +1,22 @@
-import { HashRouter, Route, Routes } from 'react-router'
-import Home from './components/Home';
-import Calendar from './components/Calendar';
-import Profile from './components/Profile';
-import './App.css'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Calendar from "./pages/Calendar";
+import Profile from "./pages/Profile";
+import SignIn from "./pages/SignIn";
+import Register from "./pages/Register";
 
 function App() {
-  return <>
-  <HashRouter>
+  return (
+    <Router>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/Calendar" element={<Calendar />} />
-        <Route path="/Profile" element={<Profile />} />
+        <Route path="/calendar" element={<Calendar />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/signin" element={<SignIn />} />
+        <Route path="/register" element={<Register />} />
       </Routes>
-    </HashRouter>
-  </>
+    </Router>
+  );
 }
 
-export default App
+export default App;
