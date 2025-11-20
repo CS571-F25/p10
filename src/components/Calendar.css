@@ -1,0 +1,115 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #e8b5bd;
+  overflow-x: hidden !important;  
+}
+
+.calendar-page {
+  padding-top: 160px; 
+  padding-left: 0;
+  padding-right: 0;
+
+  min-height: 100vh;
+  width: 100%;
+  background: #e8b5bd;
+  box-sizing: border-box;
+}
+
+.calendar-title {
+  text-align: center;
+  color: #6c2a3e;
+  margin-bottom: 25px;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.calendar-grid {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 18px;
+
+  padding: 0 20px 40px 20px;
+  box-sizing: border-box;
+}
+
+
+.week-header {
+  font-weight: bold;
+  text-align: center;
+  color: #6c2a3e;
+  padding-bottom: 5px;
+}
+
+
+.day-box {
+  background: rgba(255, 240, 240, 0.55);
+  border-radius: 16px;
+  padding: 12px;
+
+  min-height: 110px;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: 0.2s;
+  overflow: hidden;
+}
+
+.day-box:hover {
+  transform: scale(1.02);
+  background: rgba(255,240,240,0.75);
+}
+
+.day-number {
+  font-weight: bold;
+  margin-bottom: 6px;
+  color: #6c2a3e;
+}
+
+.events-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.event-item {
+  background: #f6d5db;
+  padding: 4px 8px;
+  border-radius: 8px;
+  color: #6c2a3e;
+  font-size: 13px;
+
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/*Used this source: https://www.w3schools.com/cssref/atrule_media.php */
+@media (max-width: 900px) {
+  .calendar-grid {
+    padding: 10px;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .calendar-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 400px) {
+  .calendar-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
