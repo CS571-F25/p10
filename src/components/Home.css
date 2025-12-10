@@ -6,7 +6,6 @@ html, body {
   background-color: #e8b5bd;
 }
 
-
 .home-page {
   min-height: 100vh;
   padding-bottom: 40px;
@@ -28,54 +27,6 @@ html, body {
   /* //Learned from https://www.w3schools.com/cssref/css3_pr_box-shadow.php */
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
   text-align: center;
-}
-
-.clock {
-  width: 220px;
-  height: 220px;
-  border-radius: 50%;
-  border: 6px solid rgba(255,255,255,0.9);
-  margin-bottom: 15px;
-  /* Learned from https://www.w3schools.com/css/css_positioning.asp */
-  position: relative;
-  background: rgba(255,255,255,0.2);
-}
-
-.hand {
-  /* Learned from https://www.w3schools.com/css/css_positioning.asp */
-  position: absolute;
-  left: 50%;
-  transform-origin: bottom;
-  background: #333;
-}
-
-.hour {
-  width: 6px;
-  height: 55px;
-  top: 60px;
-}
-
-.minute {
-  width: 4px;
-  height: 75px;
-  top: 40px;
-}
-
-.second {
-  width: 2px;
-  height: 90px;
-  top: 30px;
-  background: #b5e2ff;
-}
-
-.center-dot {
-  width: 14px;
-  height: 14px;
-  background: #b5e2ff;
-  border-radius: 50%;
-  position: absolute;
-  top: 103px;
-  left: 103px;
 }
 
 .digital-time {
@@ -136,7 +87,7 @@ html, body {
 .task-input-row button {
   padding: 10px 15px;
   border-radius: 12px;
-  background: #b5e2ff;
+  background: #6c2a3e;
   border: none;
   cursor: pointer;
 }
@@ -232,7 +183,7 @@ html, body {
   border: none;
   /* Learned from https://www.w3schools.com/cssref/pr_class_cursor.php */
   cursor: pointer;
-  background: #b5e2ff;
+  background: #6c2a3e;
   color: "white";
   font-weight: 600;
 }
