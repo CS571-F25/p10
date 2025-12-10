@@ -75,6 +75,19 @@ export default function Calendar() {
     setShowModal(true);
   }
 
+    function isPastDateTime(day, timeStr) {
+    if (!timeStr) return false;
+    const [hh, mm] = timeStr.split(":").map(Number);
+    const eventDate = new Date(
+      currentMonth.getFullYear(),
+      currentMonth.getMonth(),
+      day,
+      hh,
+      mm
+    );
+    return eventDate.getTime() < Date.now();
+  }
+
   function addOrEditEvent() {
     if (!newEventTitle.trim()) {
       alert("Please enter an event name.");
@@ -84,6 +97,11 @@ export default function Calendar() {
     const estimateMinutes = parseInt(newEventEstimate, 10);
     if (isNaN(estimateMinutes) || estimateMinutes <= 0) {
       alert("Please enter a positive estimated time (in minutes).");
+      return;
+    }
+
+    if (isPastDateTime(selectedDate, newEventTime)) {
+      alert("You cannot schedule an event in the past.");
       return;
     }
 
@@ -129,6 +147,19 @@ export default function Calendar() {
   function getEvents(day) {
     const key = `${currentMonth.getFullYear()}-${currentMonth.getMonth()}-${day}`;
     return events[key] || [];
+  }
+
+
+  function formatTime(timeStr) {
+    if (!timeStr) return "";
+    const [hh, mm] = timeStr.split(":").map(Number);
+    const d = new Date();
+    d.setHours(hh, mm);
+    return d.toLocaleTimeString([], {
+      hour: "numeric",
+      minute: "2-digit",
+      hour12: true,
+    });
   }
 
   // Got help from https://www.w3schools.com/jsref/jsref_tolocaledatestring.asp
@@ -221,7 +252,7 @@ export default function Calendar() {
                           opacity: completed ? 0.6 : 1,
                         }}
                       >
-                        {time && <strong>{time} • </strong>}
+                        {time && <strong>{formatTime(time)} • </strong>}
                         {title}
                       </span>
                       <button
