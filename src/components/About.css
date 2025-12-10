@@ -1,0 +1,57 @@
+.about-page {
+  min-height: 100vh;
+  padding-top: 250px;  
+  padding-bottom: 40px;
+  background: #e8b5bd;
+  display: flex;
+  justify-content: center;
+  font-family: "Inter", sans-serif;
+}
+
+
+.about-card {
+  background: rgba(255, 240, 240, 0.8);
+  border-radius: 24px;
+  padding: 28px 32px;
+  max-width: 800px;
+  width: 100%;
+  /*Learned from https://www.w3schools.com/cssref/css3_pr_box-shadow.php */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  color: #6c2a3e;
+}
+
+.about-title {
+  margin-bottom: 12px;
+}
+
+.about-intro {
+  margin-bottom: 16px;
+}
+
+.about-subtitle {
+  font-size: 1.2rem;
+  margin-top: 16px;
+}
+
+.about-steps {
+  padding-left: 20px;
+  margin-top: 8px;
+}
+
+.about-steps li {
+  margin-bottom: 8px;
+}
+
+.about-tips {
+  margin-top: 8px;
+}
+
+.about-tips p {
+  margin-bottom: 6px;
+}
+
+.about-footer {
+  margin-top: 18px;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}

@@ -37,9 +37,15 @@ export default function Navbar() {
           Calendar
         </Link>
 
-        <Link to="/profile" onClick={(e) => handleProtectedNav(e, "/profile")}>
+        <Link
+          to="/profile"
+          onClick={(e) => handleProtectedNav(e, "/profile")}
+        >
           Profile
         </Link>
+
+        {/* About can be visited  even if you are not logged in*/}
+        <Link to="/about">About</Link>
       </div>
 
       <div className="nav-right">

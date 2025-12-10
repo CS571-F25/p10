@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
-import Navbar from "./Navbar.jsx";
 import "./Login.css";
 
 export default function Login() {
@@ -17,16 +16,13 @@ export default function Login() {
     }
 
     const users = JSON.parse(localStorage.getItem("users")) || {};
-
     if (users[username]) {
       setMessage("Account already exists.");
       return;
     }
 
     users[username] = password;
-
     localStorage.setItem("users", JSON.stringify(users));
-
     setMessage("Registered! You can now login.");
   }
 
@@ -35,22 +31,17 @@ export default function Login() {
 
     if (users[username] && users[username] === password) {
       setMessage("Login successful!");
-
       localStorage.setItem("username", username);
-
       setTimeout(() => navigate("/home"), 800);
     } else {
       setMessage("Invalid username or password.");
     }
   }
-
+//Got help from ChatGPT
   return (
     <div className="login-page">
-      <Navbar />
-
       <div className="login-card">
         <h2 className="login-title">Login</h2>
-
         <label className="input-label">Email</label>
         <div className="input-wrapper">
           <input
@@ -74,16 +65,12 @@ export default function Login() {
           />
           <span className="input-icon">🔒</span>
         </div>
-
         <button className="login-btn" onClick={handleLogin}>
           Login
         </button>
-
         {message && <p className="login-message">{message}</p>}
-
         <div className="login-links">
           <span onClick={handleRegister}>Create an account</span>
-          <span>Forgot password</span>
         </div>
       </div>
     </div>

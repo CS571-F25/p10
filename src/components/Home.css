@@ -8,21 +8,24 @@ html, body {
 
 
 .home-page {
+  min-height: 100vh;
+  padding-bottom: 40px;
+  background-color: #e8b5bd;
+  padding-top: 70px;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 40px;
-
-  background: #e8b5bd; 
   font-family: "Inter", sans-serif;
 }
 
-/* Clock card */
 .clock-card {
   background: rgba(255, 240, 240, 0.35);
   padding: 40px;
   border-radius: 30px;
+  /* Learned from https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/backdrop-filter */
   backdrop-filter: blur(12px);
+  /* //Learned from https://www.w3schools.com/cssref/css3_pr_box-shadow.php */
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
   text-align: center;
 }
@@ -33,11 +36,13 @@ html, body {
   border-radius: 50%;
   border: 6px solid rgba(255,255,255,0.9);
   margin-bottom: 15px;
+  /* Learned from https://www.w3schools.com/css/css_positioning.asp */
   position: relative;
   background: rgba(255,255,255,0.2);
 }
 
 .hand {
+  /* Learned from https://www.w3schools.com/css/css_positioning.asp */
   position: absolute;
   left: 50%;
   transform-origin: bottom;
@@ -60,13 +65,13 @@ html, body {
   width: 2px;
   height: 90px;
   top: 30px;
-  background: #d35cff;
+  background: #b5e2ff;
 }
 
 .center-dot {
   width: 14px;
   height: 14px;
-  background: #d35cff;
+  background: #b5e2ff;
   border-radius: 50%;
   position: absolute;
   top: 103px;
@@ -80,7 +85,7 @@ html, body {
 }
 
 .tasks-card {
-  width: 340px;
+  width: 360px;
   padding: 30px;
   background: rgba(255,240,240,0.35);
   border-radius: 30px;
@@ -97,12 +102,23 @@ html, body {
 
 .task-input-row {
   display: flex;
-  gap: 10px;
+  align-items: center;
+  gap: 8px;
   margin-bottom: 20px;
 }
 
+.task-list {
+  max-height: 300px;
+  /*Learned about this from https://www.w3schools.com/cssref/css3_pr_overflow-y.php*/
+  overflow-y: auto;
+  display: flex;
+  /* Learned from https://www.w3schools.com/cssref/css3_pr_flex-direction.php */
+  flex-direction: column;
+  gap: 6px;
+}
+
+
 .task-input-row input {
-  flex: 1;
   padding: 10px;
   border-radius: 12px;
   border: none;
@@ -111,10 +127,16 @@ html, body {
   color: #6c2a3e;  
 }
 
+.task-input-row input[type="text"] {
+  flex: 1;  
+  min-width: 0;  
+}
+
+
 .task-input-row button {
   padding: 10px 15px;
   border-radius: 12px;
-  background: #e5aaf7;
+  background: #b5e2ff;
   border: none;
   cursor: pointer;
 }
@@ -124,7 +146,6 @@ html, body {
   padding: 12px;
   border-radius: 12px;
   margin-bottom: 12px;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -152,6 +173,25 @@ html, body {
   color: #6c2a3e;
   font-weight: 700;
   margin-bottom: 15px;
+}
+
+.reorder-btn {
+  font-size: 10px; 
+  width: 20px;  
+  height: 20px;
+  padding: 0;            
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  border: 1px solid #6c2a3e;
+  background: #fbe7f2;
+  color: #6c2a3e;
+  cursor: pointer;
+}
+
+.reorder-btn:hover {
+  background: #f2d0e4;
 }
 
 .timer-inputs {
@@ -187,12 +227,13 @@ html, body {
 }
 
 .timer-buttons button {
-  padding: 8px 15px;
+  padding: 0px 8px;
   border-radius: 12px;
   border: none;
+  /* Learned from https://www.w3schools.com/cssref/pr_class_cursor.php */
   cursor: pointer;
-  background: #e5aaf7;
-  color: #6c2a3e;
+  background: #b5e2ff;
+  color: "white";
   font-weight: 600;
 }
 

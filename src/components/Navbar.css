@@ -1,21 +1,21 @@
 .navbar {
-  position: fixed;
+  position: fixed;  
   top: 0;
   left: 0;
-  width: 100%;
-  height: 60px;
-
-  background: rgba(255,240,240,0.7);
-  backdrop-filter: blur(8px);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-
+  width: 100%;  
+  height: 80px;   
+  background: #fbd1da;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 40px;
-  z-index: 9999;
+  padding: 0 80px;   
+  /* Learned from https://www.w3schools.com/css/css3_box-sizing.asp */
+  box-sizing: border-box;
+  /* Learned from https://www.w3schools.com/cssref/css3_pr_box-shadow.php */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  /* Learned from https://www.w3schools.com/cssref/pr_pos_z-index.php */
+  z-index: 1000;
 }
-
 .nav-logo {
   font-size: 22px;
   font-weight: 700;
@@ -31,7 +31,6 @@
   text-decoration: none;
   font-size: 16px;
   font-weight: 500;
-
   color: #6c2a3e;
   transition: 0.2s;
 }
@@ -44,13 +43,13 @@
   padding: 8px 16px;
   border-radius: 10px;
   border: none;
+  /* Learned from https://www.w3schools.com/cssref/pr_class_cursor.php */
   cursor: pointer;
-
   background: #f6d5db;
   color: #6c2a3e;
   font-size: 15px;
   font-weight: 600;
-
+  /* Learned from https://www.w3schools.com/css/css3_transitions.asp*/
   transition: 0.2s;
 }
 

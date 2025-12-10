@@ -2,16 +2,13 @@ html, body {
   margin: 0;
   padding: 0;
   background: #e8b5bd;
-  overflow-x: hidden !important;  
+  /*Learned about this from https://www.w3schools.com/cssref/css3_pr_overflow-x.php*/
+  overflow-x: hidden !important;
 }
 
 .calendar-page {
-  padding-top: 160px; 
-  padding-left: 0;
-  padding-right: 0;
-
   min-height: 100vh;
-  width: 100%;
+  padding-top: 300px;
   background: #e8b5bd;
   box-sizing: border-box;
 }
@@ -24,19 +21,17 @@ html, body {
   font-weight: 700;
 }
 
+/*Learned how to make the calendar from https://css-tricks.com/a-calendar-in-three-lines-of-css/ */
 .calendar-grid {
   width: 100%;
-  max-width: 1400px;
+  max-width: 1100px;
   margin: 0 auto;
-
   display: grid;
-  grid-template-columns: repeat(7, minmax(0, 1fr));
+  grid-template-columns: repeat(7, minmax(120px, 1fr));
   gap: 18px;
-
   padding: 0 20px 40px 20px;
   box-sizing: border-box;
 }
-
 
 .week-header {
   font-weight: bold;
@@ -45,26 +40,28 @@ html, body {
   padding-bottom: 5px;
 }
 
-
 .day-box {
   background: rgba(255, 240, 240, 0.55);
-  border-radius: 16px;
+  border-radius: 24px;
   padding: 12px;
-
   min-height: 110px;
   width: 100%;
-
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-
+  /* Learned from https://www.w3schools.com/cssref/css3_pr_box-shadow.php */
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  /* Learned from https://www.w3schools.com/css/css3_transitions.asp*/
   transition: 0.2s;
+  /* Learned from https://www.w3schools.com/css/css_overflow.asp */
   overflow: hidden;
+  /* Learned from https://www.w3schools.com/cssref/pr_class_cursor.php */
+  cursor: pointer;
 }
 
 .day-box:hover {
+  /* Larned from https://www.w3schools.com/cssref/css3_pr_transform.php*/
   transform: scale(1.02);
   background: rgba(255,240,240,0.75);
 }
@@ -75,23 +72,40 @@ html, body {
   color: #6c2a3e;
 }
 
+.past-day {
+  opacity: 0.5;
+}
+
 .events-list {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
+  margin-top: 4px;
 }
 
 .event-item {
-  background: #f6d5db;
-  padding: 4px 8px;
-  border-radius: 8px;
-  color: #6c2a3e;
-  font-size: 13px;
+  /* Learned from https://www.w3schools.com/css/css_positioning.asp */
+  position: relative;
+  font-size: 0.85rem;
+  margin-top: 4px;
+  padding-right: 18px;
+}
 
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
+.event-text {
+  display: block;
+  /* Learned from https://www.w3schools.com/cssref/css3_pr_word-break.php */
+  word-break: break-word;
+}
+
+.event-delete {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: transparent;
+  border: none;
+  color: #6c2a3e;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 0.9rem;
+  line-height: 1;
+  padding: 0;
 }
 
 /*Used this source: https://www.w3schools.com/cssref/atrule_media.php */

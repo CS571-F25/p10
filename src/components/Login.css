@@ -7,11 +7,13 @@ html, body {
 }
 
 .login-page {
+  min-height: 100vh;
+  padding-top: 160px;
+  padding-bottom: 40px;
+  background: #e8b5bd;
   display: flex;
   justify-content: center;
-  align-items: center;
-
-  background-color: #e8b5bd; 
+  align-items: flex-start;
 }
 
 .login-card {
@@ -59,6 +61,7 @@ html, body {
   position: absolute;
   right: 5px;
   top: 50%;
+  /* Larned from https://www.w3schools.com/cssref/css3_pr_transform.php*/
   transform: translateY(-50%);
   font-size: 15px;
   color: #7e3e44;
@@ -68,12 +71,15 @@ html, body {
   width: 100%;
   padding: 12px;
   margin-top: 10px;
+  /* Learned this from https://www.w3schools.com/css/css3_gradients.asp */
   background: linear-gradient(to bottom right, #e6b5ba, #a25258);
   color: #4a1f23;
   font-weight: bold;
   border: none;
   border-radius: 25px;
+  /* Learned from https://www.w3schools.com/cssref/pr_class_cursor.php */
   cursor: pointer;
+   /* Learned from https://www.w3schools.com/css/css3_transitions.asp*/
   transition: 0.2s;
 }
 
